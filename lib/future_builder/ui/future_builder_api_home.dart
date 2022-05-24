@@ -43,7 +43,6 @@ class _FutureBuilderAPIHomeState extends State<FutureBuilderAPIHome> {
                   UserModel? userModel = snapshot.data as UserModel?;
                   return Center(
                     child: ListTile(
-
                       title: Text(userModel?.bankName ?? ''),
                       subtitle: Text(userModel?.accountNumber ?? ''),
                     ),

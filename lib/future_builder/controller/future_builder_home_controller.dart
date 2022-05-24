@@ -1,7 +1,6 @@
 import 'dart:async';
 
 class FutureBuilderController {
-
   int _counter = 0;
 
   int get counter => _counter;
@@ -17,7 +16,10 @@ class FutureBuilderController {
   }
 
   Future<int> getVal() async {
-    await Timer(const Duration(seconds: 1), () {},);
+    await Timer(
+      const Duration(seconds: 1),
+      () {},
+    );
     return _counter;
   }
 }

@@ -16,7 +16,6 @@ class StreamBuilderCombined extends StatefulWidget {
 }
 
 class _StreamBuilderCombinedState extends State<StreamBuilderCombined> {
-
   final _counterStreamController = StreamController<int>.broadcast();
   final _userDataStreamController = StreamController<UserModel>.broadcast();
   final StreamBuilderController _streamBuilderController = StreamBuilderController();
@@ -80,13 +79,17 @@ class _StreamBuilderCombinedState extends State<StreamBuilderCombined> {
                 builder: (context, stream) {
                   if (stream.connectionState == ConnectionState.waiting) {
                     return const CircularProgressIndicator();
-                  } else if (stream.connectionState == ConnectionState.done
-                      || stream.connectionState == ConnectionState.active) {
+                  } else if (stream.connectionState == ConnectionState.done ||
+                      stream.connectionState == ConnectionState.active) {
                     if (stream.hasData) {
                       final state = stream.data as UserModel;
                       return ListTile(
-                        title: Text('${state.bankName}',),
-                        subtitle: Text('${state.accountNumber}',),
+                        title: Text(
+                          '${state.bankName}',
+                        ),
+                        subtitle: Text(
+                          '${state.accountNumber}',
+                        ),
                       );
                     } else {
                       return const Text('Something went wrong!');

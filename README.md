@@ -12,7 +12,7 @@ Stream builder is similar to the broadcast receiver (radio station),
 which will send the values even if there is no any receiver.
 
 ## Project Structure:
-
+```
 lib
 ├── main                                # Entry point
 ├── widget                              # All the common widgets
@@ -44,3 +44,4 @@ lib
 │           └── stream_builder_api_home # API demo using stream builder
 │           └── stream_builder_combined # Counter and API demo using stream builder
 └── ...
+```

@@ -44,13 +44,17 @@ class _StreamBuilderAPIHomeState extends State<StreamBuilderAPIHome> {
             builder: (context, stream) {
               if (stream.connectionState == ConnectionState.waiting) {
                 return const CircularProgressIndicator();
-              } else if (stream.connectionState == ConnectionState.done
-                  || stream.connectionState == ConnectionState.active) {
+              } else if (stream.connectionState == ConnectionState.done ||
+                  stream.connectionState == ConnectionState.active) {
                 if (stream.hasData) {
                   final state = stream.data as UserModel;
                   return ListTile(
-                    title: Text('${state.bankName}',),
-                    subtitle: Text('${state.accountNumber}',),
+                    title: Text(
+                      '${state.bankName}',
+                    ),
+                    subtitle: Text(
+                      '${state.accountNumber}',
+                    ),
                   );
                 } else {
                   return const Text('Something went wrong!');

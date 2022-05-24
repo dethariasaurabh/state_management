@@ -34,34 +34,33 @@ class _FutureBuilderHomeState extends State<FutureBuilderHome> {
                 'You have pushed the button this many times:',
               ),
               FutureBuilder(
-                future: counter,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Text(
+                  future: counter,
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Text(
                         '0',
                         style: Theme.of(context).textTheme.displayMedium,
                       );
                     } else if (snapshot.connectionState == ConnectionState.done) {
-                    if (snapshot.hasData) {
-                      int value = snapshot.data as int;
-                      return Text(
-                        // Get the [counter] value from the
-                        // controller.
-                        '$value',
-                        style: Theme.of(context).textTheme.displayMedium,
-                      );
+                      if (snapshot.hasData) {
+                        int value = snapshot.data as int;
+                        return Text(
+                          // Get the [counter] value from the
+                          // controller.
+                          '$value',
+                          style: Theme.of(context).textTheme.displayMedium,
+                        );
+                      } else {
+                        return const Text(
+                          'Some error thrown!',
+                        );
+                      }
                     } else {
                       return const Text(
-                        'Some error thrown!',
+                        'Something went wrong!',
                       );
                     }
-                  } else {
-                    return const Text(
-                      'Something went wrong!',
-                    );
-                  }
-                }
-              ),
+                  }),
             ],
           ),
         ),
@@ -73,7 +72,7 @@ class _FutureBuilderHomeState extends State<FutureBuilderHome> {
             icon: Icons.add,
             onPressEvent: () {
               counter = controller.increment();
-              setState((){});
+              setState(() {});
             },
           ),
           const SizedBox(
@@ -82,9 +81,7 @@ class _FutureBuilderHomeState extends State<FutureBuilderHome> {
           ItemButtonWidget(
             key: const Key('decrementIconFB'),
             icon: Icons.remove,
-            onPressEvent: () {
-
-            },
+            onPressEvent: () {},
           ),
         ],
       ),

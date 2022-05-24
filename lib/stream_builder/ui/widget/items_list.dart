@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:state_management/stream_builder/ui/widget/item_button_widget.dart';
 
-
 /// Best practice is to divide the UI into
 /// the separate widgets. To follow the same
 /// all the FABs are put in the separate widget.
@@ -14,7 +13,6 @@ import 'package:state_management/stream_builder/ui/widget/item_button_widget.dar
 /// widget, the callback [getData] is used.
 
 class ItemsList extends StatelessWidget {
-
   final StreamController counterStreamController;
   int counter;
   final Function() getData; // Callback to call the function

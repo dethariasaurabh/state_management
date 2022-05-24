@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
-
   final Function onPressEvent;
   final String title;
 
@@ -18,8 +17,8 @@ class AppButton extends StatelessWidget {
       child: Text(
         title,
         style: Theme.of(context).textTheme.bodyText1!.apply(
-          color: Colors.white,
-        ),
+              color: Colors.white,
+            ),
       ),
     );
   }

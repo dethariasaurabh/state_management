@@ -12,14 +12,7 @@ class UserModel {
   String? routingNumber;
   String? swiftBic;
 
-  UserModel(
-      {this.id,
-        this.uid,
-        this.accountNumber,
-        this.iban,
-        this.bankName,
-        this.routingNumber,
-        this.swiftBic});
+  UserModel({this.id, this.uid, this.accountNumber, this.iban, this.bankName, this.routingNumber, this.swiftBic});
 
   UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

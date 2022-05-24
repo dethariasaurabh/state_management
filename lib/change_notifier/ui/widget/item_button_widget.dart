@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ItemButtonWidget extends StatelessWidget {
-
   final IconData icon;
   final Function() onPressEvent;
 
